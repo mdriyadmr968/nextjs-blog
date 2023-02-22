@@ -4,10 +4,8 @@ const index = ({ posts }) => {
   return (
     <div style={{ backgroundColor: "white", color: "black", paddingTop: "5%" }}>
       <Head>
-        <title>Home Page </title>
-        <meta name="description" content="Free Web youtube tutorials" />
-        <meta name="keywords" content="HTML, CSS, JavaScript, next.js" />
-        <meta name="author" content="thapa technical" />
+        <title>nextjs blog's home page </title>
+        <meta name="description" content="Welcome to nexjs blog's home page" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"

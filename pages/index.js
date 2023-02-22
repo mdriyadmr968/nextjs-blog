@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { useState } from "react";
 const index = ({ posts }) => {
   return (
-    <div style={{ backgroundColor: "white", color: "black" }}>
+    <div style={{ backgroundColor: "white", color: "black", paddingTop: "5%" }}>
       <Head>
         <title>Home Page </title>
         <meta name="description" content="Free Web youtube tutorials" />
@@ -17,7 +15,9 @@ const index = ({ posts }) => {
       </Head>
       <div style={{ width: "60%", margin: "auto" }}>
         <div>
-          <h1 style={{ textAlign: "center" }}>Welcome to Gatsby Blog</h1>
+          <h1 style={{ textAlign: "center", marginBottom: "5%" }}>
+            Welcome to Gatsby Blog
+          </h1>
 
           {posts.map((post) => (
             <div key={post.postId}>
@@ -38,7 +38,7 @@ const index = ({ posts }) => {
                   borderRadius: "5%",
                   display: "block",
                   width: "150px",
-                  margin: "auto",
+                  margin: "0% auto 5%",
                   textAlign: "center",
                 }}
               >

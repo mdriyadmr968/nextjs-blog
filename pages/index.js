@@ -1,16 +1,33 @@
 import Link from "next/link";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 const index = ({ posts }) => {
   return (
     <div style={{ backgroundColor: "white", color: "black", paddingTop: "5%" }}>
-      <Head>
-        <title>nextjs blog's home page </title>
-        <meta name="description" content="Welcome to nexjs blog's home page" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        ></meta>
-      </Head>
+      <NextSeo
+        title="nextjs blog's home page "
+        description="Welcome to nexjs blog's home page"
+        openGraph={{
+          url: "https://nextjs-blog-rouge-pi.vercel.app/",
+          title: "nextjs blog's home page ",
+          description: "Welcome to nexjs blog's home page",
+          images: [
+            {
+              url: "https://i.ibb.co/2gD41VZ/download.jpg",
+              width: 300,
+              height: 300,
+              alt: "Og Image Alt",
+              type: "image/jpeg",
+            },
+          ],
+          siteName: "nexblog",
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
+        }}
+      />
       <div style={{ width: "60%", margin: "auto" }}>
         <div>
           <h1 style={{ textAlign: "center", marginBottom: "5%" }}>

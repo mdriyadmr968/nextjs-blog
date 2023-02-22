@@ -4,15 +4,46 @@ import Head from "next/head";
 import { NextSeo } from "next-seo";
 
 const id = ({ post }) => {
+  function generateOpenGraphImages(id) {
+    const images = [];
+
+    switch (id) {
+      case "1":
+        images.push({
+          url: "/path/to/image-1.jpg",
+          width: 800,
+          height: 600,
+          alt: "Image 1",
+          type: "image/jpeg",
+        });
+        break;
+
+      case "2":
+        images.push({
+          url: "/path/to/image-2.jpg",
+          width: 800,
+          height: 600,
+          alt: "Image 2",
+          type: "image/jpeg",
+        });
+        break;
+
+      // Add more cases for different IDs...
+
+      default:
+        break;
+    }
+
+    return images;
+  }
   return (
     <div style={{ backgroundColor: "white", color: "black" }}>
       <div style={{ width: "60%", margin: "auto", paddingTop: "5%" }}>
         <NextSeo
           title={post.title}
           description={post.description}
-          canonical="https://www.canonical.ie/"
           openGraph={{
-            url: "https://www.url.ie/a",
+            url: "https://nextjs-blog-rouge-pi.vercel.app",
             title: `${post.title}`,
             description: `${post.description}`,
             images: [
@@ -24,7 +55,7 @@ const id = ({ post }) => {
                 type: "image/jpeg",
               },
             ],
-            siteName: "SiteName",
+            siteName: "nextblog",
           }}
           twitter={{
             handle: "@handle",

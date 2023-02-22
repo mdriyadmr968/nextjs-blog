@@ -1,19 +1,37 @@
 import Link from "next/link";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 const id = ({ post }) => {
   return (
     <div style={{ backgroundColor: "white", color: "black" }}>
       <div style={{ width: "60%", margin: "auto", paddingTop: "5%" }}>
-        <Head>
-          <title>{post.title} </title>
-          <meta name="category" content={post.category} />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          ></meta>
-        </Head>
+        <NextSeo
+          title={post.title}
+          description={post.description}
+          canonical="https://www.canonical.ie/"
+          openGraph={{
+            url: "https://www.url.ie/a",
+            title: `${post.title}`,
+            description: `${post.description}`,
+            images: [
+              {
+                url: "https://i.ibb.co/2gD41VZ/download.jpg",
+                width: 300,
+                height: 300,
+                alt: "Og Image Alt",
+                type: "image/jpeg",
+              },
+            ],
+            siteName: "SiteName",
+          }}
+          twitter={{
+            handle: "@handle",
+            site: "@site",
+            cardType: "summary_large_image",
+          }}
+        />
         <div>
           <Link
             href="/"
